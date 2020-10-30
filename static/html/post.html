@@ -1,0 +1,63 @@
+<section class="post" id="POST_ID++;">
+    <div class="post_info flex">
+        <div class="post_avatar">
+            <a href="?profile=USER_LINK++;"><img src="POST_AVATAR++;"></a>
+        </div>
+        <div class="post_user">
+            <a href="USER_LINK++;">POST_USER++;</a>
+            <span>POST_DATE++;</span>
+       </div>
+       <div class="post_more" id="show_more_POST_ID++;">
+        <img class="icon_m" src="static/img/more.png">
+      </div>
+    </div>
+    <div class="post_text">
+        <span>POST_TEXT++;</span>
+    </div>
+    <div class="post_img">
+        POST_MEME++; 
+    </div>
+    <div class="post_icon">
+        <button class="emo_ico"><img src ="static/img/Like.png"><span id="liketotal_POST_ID++;">LIKES++;</span></button>
+        <button class="emo_ico"><img src ="static/img/Funny.png"><span id="funnytotal_POST_ID++;">FUNNYS++;</span></button>
+        <button class="emo_ico"><img src ="static/img/Love.png"><span id="lovetotal_POST_ID++;">LOVES++;</span></button>
+        <button class="emo_ico"><img src ="static/img/Angry.png"><span id="angrytotal_POST_ID++;">ANGRYS++;</span></button>
+    </div>
+    <hr class="horizontal">
+    <div class="post_footer flex-between">
+        <div class="like_btn" id="POST_ID++;_like_btn">
+            <button class="flex-centered"><img class="icon_s" src="static/img/Like.png"> <span>Like</span></button>
+            <div class="react_box">
+                <div class="react_icon" id="POST_ID++;_like_emotion_up">
+                    <label>Like</label>
+                </div>
+                <div class="react_icon" id="POST_ID++;_funny_emotion_up">
+                    <label>Funny</label> 
+                </div>
+                <div class="react_icon" id="POST_ID++;_love_emotion_up">
+                    <label>Love</label> 
+                </div>
+                <div class="react_icon" id="POST_ID++;_angry_emotion_up">
+                    <label>Angry</label>
+                </div>
+            </div>
+        </div>
+        <div class="comments_btn">
+            <button class="flex-centered"><a href="?details=POST_ID++;"><img class="icon_s" src="static/img/comment.png"> <span>Comment COMMENTS++;</span></a></button> 
+        </div>
+        <div class="share_btn">
+            <button class="flex-centered"><img class="icon_s" src="static/img/share.png"> <span>Share</span></button>
+        </div>
+    </div>
+    <div class="more" id="more_POST_ID++;">
+        <button>Hide</button>
+    </div>
+</section>
+ <script> 
+$("#show_more_POST_ID++;").click(function(){
+  $("#more_POST_ID++;").slideDown("200");
+ });
+$("#more_POST_ID++;").click(function(){
+    $("#POST_ID++;").slideUp("20");
+});
+ </script>

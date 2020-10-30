@@ -1,0 +1,107 @@
+ <!--
+   __       __  ________  __       __  ______  ________  __      __ 
+  |  \     /  \|        \|  \     /  \|      \|        \|  \    /  \
+  | $$\   /  $$| $$$$$$$$| $$\   /  $$ \$$$$$$ \$$$$$$$$ \$$\  /  $$
+  | $$$\ /  $$$| $$__    | $$$\ /  $$$  | $$     | $$     \$$\/  $$ 
+  | $$$$\  $$$$| $$  \   | $$$$\  $$$$  | $$     | $$      \$$  $$  
+  | $$\$$ $$ $$| $$$$$   | $$\$$ $$ $$  | $$     | $$       \$$$$   
+  | $$ \$$$| $$| $$_____ | $$ \$$$| $$ _| $$_    | $$       | $$    
+  | $$  \$ | $$| $$     \| $$  \$ | $$|   $$ \   | $$       | $$    
+   \$$      \$$ \$$$$$$$$ \$$      \$$ \$$$$$$    \$$        \$$-->
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="static/css/level1.css" rel="stylesheet">
+      <script>var id = "ID++;";</script>
+    </head>
+<body>
+   <div class="topbar flex">
+      <div class="top_search">
+        <form id="searchform">
+           <div class="search_box">
+              <input type="text" name="keyword" placeholder="Search">
+              <button type="submit"></button>
+           </div>
+        </form>
+     </div>
+     <div class="top_menu flex">
+         <div class="menuitem"><img class="menu_img" src="static/img/home.png"> <span>Latest memes</span></div>
+         <div class="menuitem" id="onlinebtn"><img class="online_circle" src="static/img/online.png"> <span>Online</span></div>
+         <div class="menuitem"><a href="?profile=ID++;">Profile</a></div>
+         <div class="menuitem"><span>Find friends</span></div>
+         <div class="menuitem"><button class="transp" id="notification"><img src="static/img/notification.png"><span id="notified"></span></button></div>
+     </div>
+     <div class="logout">
+       <a href="?logout"><button class="backgrond transp">
+         <img src="static/img/logout.png">
+       </button>
+     </a>
+     </div>
+    </div>
+  <div class="_main flex">
+      <div class="minbar shadow">
+           <div class="minimenu">
+              <a href="?profile=MY_ID++;"><button id="profilebtn" class="shadow" style="background-image: url('MY_AVATAR++;');"></button></a>
+              <hr class="horizontal">
+              <button id="addbtn" class="shadow"><img src="static/img/plus_green.png"></button>
+              <button id="searchbtn" class="shadow"><img src="static/img/search_green.png"></button>
+           </div>
+      </div>
+      <div class="sidebar">
+          <div id="sidemenu">
+            <li id="latest"><a ><span class="active"><img src="static/img/home.png"> Latest memes</span></a></li>
+            <li id="random"><a ><span><img src="static/img/random.png"> Random memes</span></a></li>
+            <li id="videos"><a ><span><img src="static/img/video.png"> Funny Videos</span></a></li>
+            <li id="gifs"><a ><span><img src="static/img/gif.png"> Gifs</span></a></li>
+          </div>
+          <hr class="horizontal">
+          <div class="top_memes">
+             <div id="top_title">
+                <span>Top memes</span> 
+                <img src="static/img/star.png">
+              </div>
+              <div class="all_tops">
+                 
+              </div>
+          </div>
+      </div>
+      <div class="middle">
+        <div id="load_data">
+           
+        </div>
+        <div class="post-loader" id="load_data_message"></div>
+        <br />
+        <br />
+      </div>
+      <div class="_ad shadow">
+  
+      </div>
+  </div>
+  <div id="notifications" class="shadow">
+  
+  </div>
+  <div class="modal shadow" id="add_post_modal">
+      <div class="modal_header">
+        <span class="close">&times;</span>
+        <span class="modal_title">Add post</span>
+      </div>
+      <div class="modal_body">
+        <div class="up_cover flex-centered shadow">
+          <img id="selected" src="static/img/upload.png">
+          <button id="removeimg" class="background transp shadow"></button>
+         </div>
+         <form id="upf" method="POST" action="operator.php" enctype="multipart/form-data">
+            <input type="hidden" name="upp">
+            <input type="file" accept="image/*,.mp4,.gif" name="postim" onchange="selectPostImage(event)">
+            <textarea form="upf" id="desc_inptr" name="upt" maxlength="400" placeholder="Enter description"></textarea>
+            <button type="submit">POST</button>
+         </form>
+      </div>
+  </div>
+  
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+  <script src="static/js/scroll.js"></script> 
+  <script src="static/js/level1.js"></script> 
+  <script src="static/js/main.js"></script> 
+ </body>
+</html>

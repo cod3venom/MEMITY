@@ -1,0 +1,40 @@
+<div class="settings ">
+	<div class="col1 flex-centered">
+		<div class="settings_avatar">
+		<form id="changeavatar" method="POST" action="operator.php">
+ 			<input type="hidden" name="changea">
+			<div class="settings_avatar_child transp">
+				<img id="selected_img" src="PROFILE_AVATAR++;">
+				<span id="newawselect">Click</span>
+			</div>
+			<input type="file" id="selectorig" onchange="selectAv(event)" name="newavf">
+			<button type="submit">Change</button>
+		</form>
+		</div>
+		<div class="settings-userinfo">
+			<span>User information</span>
+			<form id="changeuser">
+				<input type="hidden" name="changeu">
+				<input type="text" name="newu"  placeholder="Enter new username">
+				<button type="submit">Save</button>
+			</form>
+			<form id="changemail">
+				<input type="hidden" name="changem">
+				<input type="email" name="newm"  placeholder="Enter new Email">
+				<button type="submit">Save</button>
+			</form>
+		</div>
+	</div>
+	<div class="col1 flex-centered">
+		<div class="settings_security">
+			<span>Security settings</span>
+			<form id="changepwd">
+				<input type="hidden" name="changep">
+				<input type="password" name="npwd" placeholder="Enter new password">
+				<input type="password" name="nrpt" placeholder="Confirm new password">
+				<button type="submit">Update</button>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="static/js/settings.js"></script>

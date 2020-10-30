@@ -1,0 +1,104 @@
+ <!--
+   __       __  ________  __       __  ______  ________  __      __ 
+  |  \     /  \|        \|  \     /  \|      \|        \|  \    /  \
+  | $$\   /  $$| $$$$$$$$| $$\   /  $$ \$$$$$$ \$$$$$$$$ \$$\  /  $$
+  | $$$\ /  $$$| $$__    | $$$\ /  $$$  | $$     | $$     \$$\/  $$ 
+  | $$$$\  $$$$| $$  \   | $$$$\  $$$$  | $$     | $$      \$$  $$  
+  | $$\$$ $$ $$| $$$$$   | $$\$$ $$ $$  | $$     | $$       \$$$$   
+  | $$ \$$$| $$| $$_____ | $$ \$$$| $$ _| $$_    | $$       | $$    
+  | $$  \$ | $$| $$     \| $$  \$ | $$|   $$ \   | $$       | $$    
+   \$$      \$$ \$$$$$$$$ \$$      \$$ \$$$$$$    \$$        \$$-->
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="static/css/level1.css" rel="stylesheet">
+    </head>
+<body>
+   <div class="topbar flex">
+      <div class="top_search">
+        <form id="searchform">
+           <div class="search_box">
+              <input type="text" name="keyword" placeholder="Search">
+              <button type="submit"></button>
+           </div>
+        </form>
+     </div>
+     <div class="top_menu flex">
+         <div class="menuitem"><img class="menu_img" src="static/img/home.png"> <span>Latest memes</span></div>
+         <div class="menuitem"><img class="online_circle" src="static/img/online.png"> <span>Online</span></div>
+         <div class="menuitem"><span>Profile</span></div>
+         <div class="menuitem"><span>Add friends</span></div>
+         <div class="menuitem"><button class="transp" id="notification"><img src="static/img/notification.png"></button></div>
+     </div>
+     <div class="logout">
+       <a href="?logout"><button class="backgrond transp">
+         <img src="static/img/logout.png">
+       </button>
+     </a>
+     </div>
+    </div>
+  <div class="_main flex">
+      <div class="minbar shadow">
+           <div class="minimenu">
+              <a href="?profile=MY_ID++;"><button id="profilebtn" class="shadow" style="background-image: url('MY_AVATAR++;');"></button></a>
+              <hr class="horizontal">
+              <button id="addbtn" class="shadow"><img src="static/img/plus_green.png"></button>
+              <button id="searchbtn" class="shadow"><img src="static/img/search_green.png"></button>
+           </div>
+      </div>
+      <div class="sidebar">
+          <div id="sidemenu">
+            <li id="latest"><a href="?latest"><span class="active"><img src="static/img/home.png"> Latest memes</span></a></li>
+            <li id="random"><a  href="?random"><span><img src="static/img/random.png"> Random memes</span></a></li>
+            <li id="videos"><a  href="?videos"><span><img src="static/img/video.png"> Funny Videos</span></a></li>
+            <li id="gifs"><a  href="?gifs"><span><img src="static/img/gif.png"> Gifs</span></a></li>
+          </div>
+          <hr class="horizontal">
+          <div class="top_memes">
+             <div id="top_title">
+                <span>Top memes</span> 
+                <img src="static/img/star.png">
+              </div>
+              <div class="all_tops">
+                 
+              </div>
+          </div>
+      </div>
+      <div class="middle">
+        <div class="profile">
+              <div class="profile_cover" style="background-image: url('PROFILE_AVATAR++;');">
+                  <div class="profile_data flex">
+                      <div class="profile_avatar" style="background-image: url('PROFILE_AVATAR++;');">
+                      </div>
+                      <div class="profile_username">
+                          <a href="profile.php?profile=PROFILE_ID++;">PROFILE_USER++;</a>
+                      </div>
+                  </div>
+                  <div class="profile_option_box">
+                     <button class="BTNTYPE++;_btn">FOLLOW_BTN++;</button>
+                  </div>
+              </div>
+              <div class="profile_footer flex-between">
+                  <div class="followers_btn">Followers</div>
+                  <div class="user_posts_btn">POSTS</div>
+                  <div class="followings_btn">Following</div>
+              </div>
+              <div id="profile-data">
+                <hr class="horizontal">
+              </div>
+          </div>
+      </div>
+      <div class="_ad shadow">
+  
+      </div>
+  </div>
+  <div id="notifications">
+  
+  </div>
+  
+  <script  src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+  <script type="text/javascript">var id = "ID++;";</script>
+  <script  src="static/js/level1.js"></script> 
+</body>
+</html>
+ 

@@ -1,0 +1,146 @@
+ <!--
+   __       __  ________  __       __  ______  ________  __      __ 
+  |  \     /  \|        \|  \     /  \|      \|        \|  \    /  \
+  | $$\   /  $$| $$$$$$$$| $$\   /  $$ \$$$$$$ \$$$$$$$$ \$$\  /  $$
+  | $$$\ /  $$$| $$__    | $$$\ /  $$$  | $$     | $$     \$$\/  $$ 
+  | $$$$\  $$$$| $$  \   | $$$$\  $$$$  | $$     | $$      \$$  $$  
+  | $$\$$ $$ $$| $$$$$   | $$\$$ $$ $$  | $$     | $$       \$$$$   
+  | $$ \$$$| $$| $$_____ | $$ \$$$| $$ _| $$_    | $$       | $$    
+  | $$  \$ | $$| $$     \| $$  \$ | $$|   $$ \   | $$       | $$    
+   \$$      \$$ \$$$$$$$$ \$$      \$$ \$$$$$$    \$$        \$$-->
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="static/css/level1.css" rel="stylesheet">
+    </head>
+<body>
+   <div class="topbar flex">
+      <div class="top_search">
+        <form id="searchform">
+           <div class="search_box">
+              <input type="text" name="keyword" placeholder="Search">
+              <button type="submit"></button>
+           </div>
+        </form>
+     </div>
+     <div class="top_menu flex">
+         <div class="menuitem"><img class="menu_img" src="static/img/home.png"> <span>Latest memes</span></div>
+         <div class="menuitem"><img class="online_circle" src="static/img/online.png"> <span>Online</span></div>
+         <div class="menuitem"><span>Profile</span></div>
+         <div class="menuitem"><span>Add friends</span></div>
+         <div class="menuitem"><button class="transp" id="notification"><img src="static/img/notification.png"></button></div>
+     </div>
+     <div class="logout">
+       <a href="?logout"><button class="backgrond transp">
+         <img src="static/img/logout.png">
+       </button>
+     </a>
+     </div>
+    </div>
+    <div class="_main flex">
+        <div class="minbar shadow">
+           <div class="minimenu">
+              <a href="?profile=MY_ID++;"><button id="profilebtn" class="shadow" style="background-image: url('MY_AVATAR++;');"></button></a>
+              <hr class="horizontal">
+              <button id="addbtn" class="shadow"><img src="static/img/plus_green.png"></button>
+              <button id="searchbtn" class="shadow"><img src="static/img/search_green.png"></button>
+           </div>
+        </div>
+        <div class="sidebar shadow">
+            <div id="sidemenu">
+                <li id="latest"><a href="?latest"><span class="active"><img src="static/img/home.png"> Latest memes</span></a></li>
+                <li id="random"><a  href="?random"><span><img src="static/img/random.png"> Random memes</span></a></li>
+                <li id="videos"><a  href="?videos"><span><img src="static/img/video.png"> Funny Videos</span></a></li>
+                <li id="gifs"><a  href="?gifs"><span><img src="static/img/gif.png"> Gifs</span></a></li>
+            </div>
+            <hr class="horizontal">
+            <div class="top_memes">
+               <div id="top_title">
+                  <span>Top memes</span> 
+                  <img src="static/img/star.png">
+                </div>
+                <div class="all_tops">
+                 
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+          <div id="load_data">
+            <section class="post" id="POST_ID++;">
+                <div class="post_info flex">
+                    <div class="post_avatar">
+                        <a href="?profile=USER_LINK++;"><img src="POST_AVATAR++;"></a>
+                    </div>
+                    <div class="post_user">
+                        <a href="USER_LINK++;">POST_USER++;</a>
+                        <span>POST_DATE++;</span>
+                   </div>
+                   <div class="post_more">
+                    <img class="icon_m" src="static/img/more.png">
+                  </div>
+                </div>
+                <div class="post_img">
+                    POST_MEME++; 
+                </div>
+                <div class="post_icon">
+                    <button class="emo_ico"><img src ="static/img/Like.png"><span id="liketotal_POST_ID++;"> LIKES++; </span></button>
+                    <button class="emo_ico"><img src ="static/img/Funny.png"><span id="funnytotal_POST_ID++;">FUNNYS++;</span></button>
+                    <button class="emo_ico"><img src ="static/img/Love.png"><span id="lovetotal_POST_ID++;">LOVES++;</span></button>
+                    <button class="emo_ico"><img src ="static/img/Angry.png"><span id="angrytotal_POST_ID++;">ANGRYS++;</span></button>
+                </div>
+                <hr class="horizontal">
+                <div class="post_footer flex-between">
+                    <div class="like_btn" id="POST_ID++;_like_btn">
+                        <button class="flex-centered"><img class="icon_s" src="static/img/Like.png"> <span>Like</span></button>
+                        <div class="react_box">
+                            <div class="react_icon" id="POST_ID++;_like_emotion_up">
+                                <label>Like</label>
+                            </div>
+                            <div class="react_icon" id="POST_ID++;_funny_emotion_up">
+                                <label>Funny</label> 
+                            </div>
+                            <div class="react_icon" id="POST_ID++;_love_emotion_up">
+                                <label>Love</label> 
+                            </div>
+                            <div class="react_icon" id="POST_ID++;_angry_emotion_up">
+                                <label>Angry</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments_btn">
+                        <button class="flex-centered"><a href="?details=POST_ID++;"><img class="icon_s" src="static/img/comment.png"> <span>Comment COMMENTS++;</span></a></button> 
+                    </div>
+                    <div class="share_btn">
+                        <button class="flex-centered"><img class="icon_s" src="static/img/share.png"> <span>Share</span></button>
+                    </div>
+                </div>
+                <hr class="horizontal">
+                <span>230 Comments</span>
+                <div class="new_com">
+                   <form id="sendcom">
+                        <input type="hidden" name="_c" value="POST_ID++;">
+                        <textarea form="sendcom" id="input_newcom" wrap="soft"   placeholder="Write comment" name="newcom"></textarea>
+                        <div id="input_switch_detail">
+                          <button id="submitrepcom" type="submit" class="background transp"><img src="static/img/send.png"></button>
+                     </div>
+                   </form>
+                </div>
+                <div class="all_comments">
+    
+                </div>
+                 
+            </section>
+            </div>
+        </div>
+        <div class="_ad"></div>
+    </div>
+   <div id="notifications">
+  
+    </div>
+
+     <script  src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+     <script type="text/javascript">var id = "ID++;";</script>
+     <script  src="static/js/details.js"></script> 
+     <script  src="static/js/level1.js"></script> 
+</body>
+</html>

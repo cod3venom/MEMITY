@@ -1,0 +1,706 @@
+/**********************************************
+
+|  \     /  \|        \|  \     /  \|      \|        \|  \    /  \
+| $$\   /  $$| $$$$$$$$| $$\   /  $$ \$$$$$$ \$$$$$$$$ \$$\  /  $$
+| $$$\ /  $$$| $$__    | $$$\ /  $$$  | $$     | $$     \$$\/  $$ 
+| $$$$\  $$$$| $$  \   | $$$$\  $$$$  | $$     | $$      \$$  $$  
+| $$\$$ $$ $$| $$$$$   | $$\$$ $$ $$  | $$     | $$       \$$$$   
+| $$ \$$$| $$| $$_____ | $$ \$$$| $$ _| $$_    | $$       | $$    
+| $$  \$ | $$| $$     \| $$  \$ | $$|   $$ \   | $$       | $$    
+    \$$      \$$ \$$$$$$$$ \$$      \$$ \$$$$$$    \$$        \$$-->
+
+**********************************************/
+html,body{
+    height: 100%; position: relative; background-color: #36393F;
+}
+
+
+/*********************/
+/***** VARIABLES *******/
+ 
+button, input{
+    background-size: cover;  border:none; outline: none;
+    background-position: center; background-repeat: no-repeat; 
+}
+.modal{
+  width:500px;  height: 500px; position: fixed; top: 10%;  left: 30%;  
+  background: red; display: block; z-index: 9;
+}
+
+ 
+.modal_header{
+ display: block; width: 100%; height: 25px; background-color: #202225;
+}
+.modal_title{
+  color: #4AB480; font-size: 19px; padding-left: .5rem; 
+}
+.modal_body{
+  width: 95%; background-color: #2F3136; margin: auto;
+}
+ 
+.close{
+  position: absolute; right: 10px; top: 1px; color: red; cursor: pointer; font-size: 20px; font-weight: bold;
+}
+.shadow{box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2); }
+
+.flex{display: -ms-flexbox; display: flex; -ms-flex-align:start;align-items: flex-start;}
+.flex-between{
+	display: flex; justify-content: space-between;
+}
+.flex-centered{display: flex; align-items: center; justify-content: center; }
+.horizontal{
+     width: 100%; height: 3px; border:none; background-color: #2D2F31;
+}
+.active{
+    color: #ffffff;
+}
+.background{
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+}
+.transp{
+    background-color: transparent;
+}
+
+/*********************/
+/***** TOPBAR *******/
+
+.topbar{
+    position: fixed; left: 80px; top: 0; right: 0; height: 48px;  line-height: 48px; z-index: 9; background-color: #36393F;
+     border-bottom:4px solid #222427;  z-index: 9;
+}
+.top_search{
+    width: 250px;  height: 48px;  padding-left: 0.2rem;    background-color: #2F3136; 
+   
+}
+#searchform{
+    position: relative; margin-top: 2px;   width: 90%; margin:auto;    margin-top: 8px;
+     
+}
+.search_box>input{
+    width: 100%; height: 30px; background-color: #202225;
+    color: #8F9297; border:none; border-radius: 4px; padding-left: .5rem;
+    
+}
+.search_box>button{
+    width: 22px; height: 22px;
+    position: absolute; top:4px; right: 0px;
+    background-color: #202225;
+    background-image: url("../img/search.png"); cursor: pointer;
+}
+
+.top_menu{
+    background-color: #36393F; width: 80%;  padding-left: 2rem;      position: relative;
+}
+.menuitem, .menuitem>a{
+    height: 35px; color: #84888D;  font-size: 18px;  margin-left:2%; position: relative; cursor: pointer;
+    padding: 4px 10px; text-decoration: none;
+}
+.menuitem:hover{
+    background: #393C43;
+}
+.top_menu.flex > div:nth-child(1) > span{
+    color: #ffffff;
+}
+.top_menu.flex > div:nth-child(2) > span{
+    padding-left: .5rem;
+}
+.menu_img{
+   width: 1.2rem; height: 1.2rem; 
+} 
+.online_circle{
+    height: .5rem; position: absolute; top: 15px; left: 0;
+}
+#notification{
+    width: 30px; height: 30px;  position: relative; margin-top: 30%; 
+}
+#notification>img{
+    height: 20px; vertical-align: middle; 
+}
+
+#notified{
+  height:8px; width: 8px;background-color: red; border-radius: 50%; display: inline-block;
+  position: absolute; right: 0; bottom: 0;
+}
+.logout{
+     position: absolute; right: 3rem; top: 1rem; 
+}
+.logout>a>button{
+     height: 25px  border-radius: 5px; width: 80px;
+}
+.logout>a>button>img{
+    height: 25px;
+}
+/*********************/
+/***** MINSIDE *******/
+.minbar{
+   position: fixed; left: 0; top: 0; bottom: 0; width: 80px; background-color: #202225;
+}
+.minimenu{
+    margin-top: 0.2rem;
+}
+.minimenu>a>button, .minimenu>button{
+    display: block; width: 40px; height: 40;   margin: auto; border-radius: 50%; border:none;  cursor: pointer; background-color: #36393F;
+    background-size: cover; background-position: center; background-repeat: no-repeat;  transition: 300ms; outline: none;
+}
+.minimenu>button{
+    margin-top: 10%;
+}
+#addbtn:hover, #searchbtn:hover{
+    transition: 400ms; background-color: #47B480;
+}
+#addbtn>img, #searchbtn>img{
+    height: 20px;
+}
+
+/*********************/
+/***** SIDEBAR *******/
+.sidebar{
+    position: fixed; left: 80px; top: 48px; bottom: 0; width: 250px; background-color: #2F3136; 
+}
+
+#sidemenu>li{
+   display: block; width: 95%; height: 35px; border-radius: 3px; line-height: 35px;
+   list-style: none; margin:auto; margin-top: 2%; cursor: pointer;
+}
+#sidemenu>li>a{
+    text-decoration: none; padding:0 16%;
+}
+#sidemenu>li:hover{
+    background-color: #393C43; 
+}
+#sidemenu>li>a>span>img{
+    height: 20px; vertical-align: middle;
+}
+#sidemenu>li>a>span{
+    font-size: 16px; color: #4B4F56;
+}
+#sidemenu>:nth-child(1)>a>span{
+    font-size: 16px; color:#ffffff;
+}
+.top_memes{
+    margin-top: 1rem;
+}
+#top_title{
+    position: relative; display: block; color: #ffffff;
+}
+#top_title>span{
+    padding:0 20%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-rendering: optimizeLegibility;
+    font-weight: bold; font-size: 13px;
+}
+#top_title>img{
+    position: absolute;  height: 20px; vertical-align: middle;
+    right: 5px;
+}
+
+.top_url{
+    text-decoration: none;
+}
+.top_box{
+    width: 90%; height: 35px; line-height: 35px; margin: auto; background-color:#393C43;
+    padding:5px 5px 5px 5px;  margin-top: 5%;
+    border-radius: 4px; cursor: pointer;
+    transition: 600ms;  
+  }
+   
+.top_box:hover{
+    transition: 600ms; transform: scale(1.09);
+}
+.top_box>.top_img>img, .top_box>.top_img>video{
+    width: 40px; height: 30px; vertical-align: middle;
+}
+.top_box>.top_title{
+    color: #ffffff; padding-left: 0.5rem;
+}
+
+/*********************/
+/***** MIDDLE *******/
+.middle{
+    width: 700px; height: 100vh; margin-left: 23.6%;  
+}
+#load_data{
+    margin-top: 10%;
+}
+/*********************/
+/***** AD *******/
+._ad{
+    position: fixed; width: 353px; height: 100vh; top: 3    8px; right: 0; background-color: #2F3136;
+}
+/*********************/
+/***** NOTIFICATIONS *******/
+#notifications{
+    position: fixed; width: 300px;  height: 300px;  top: 5%; right: 30%; overflow-y: scroll;
+    background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.5); z-index: 9;  display: none;
+}
+/*********************/
+/***** POST *******/
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+#loader{
+animation-duration: 4s; animation-fill-mode: forwards; animation-iteration-count: infinite;
+animation-name: placeHolderShimmer; animation-timing-function: linear;
+background: linear-gradient(to right, #4AB480 28%, #2F3136 18%,#2F3136 33%);
+display: block; margin-top: 2%;  width: 610;  height: 16px; margin: auto;  border-radius: 5px;
+margin-top: 4%;
+}
+#sad{
+    width: 400px; height: 400px; margin: auto; background-image: url("../img/sad.png"); position: relative;
+}
+#sad_msg{ 
+     display: block; width: 600px; margin: auto; font-size: 2rem; font-weight: bold;  text-align:center;
+     padding-top: .5rem; color: #85898E;
+      
+}
+.post{
+    display: block;  width: 550px;   background-color:#202225;
+     position: relative; border:2px solid #002B36; margin: auto;  
+     padding:10px 10px 10px 10px;  
+}
+ 
+.post_info{
+    position: relative; background-color: #202225; padding-left: .2rem; width: 100%;
+}
+.post_avatar>a>img{
+    height: 45px; border-radius: 50%; 
+}
+.post_user{
+    padding-left: .5rem;
+}
+.post_user>a{
+    text-decoration: none; color: #4B4F56; font-weight: bold; display: block;
+}
+.post_user>span{
+    font-size: 10px;
+}
+.post_more
+{
+    position: absolute; right: 0; cursor: pointer;
+}
+.more{
+  position: absolute; top: 15px; right: -45px;  width: 60px; height: 30px; z-index: 9; 
+  background-color:#2F3136; display: none;   
+}
+.more>button{
+  width: 100%; height: 30px; font-weight: bold; text-align: center;  color:#FFF; background-color: transparent;
+  border-radius: 4px; border:1px solid #4AB480;
+}
+.post_text{
+  padding-left: 3.5rem; color: #FFF; letter-spacing: 1px; font-family:"Monaco_Linux";
+}
+.post_img{
+    padding-top: 1%; 
+}
+div.post_img >img, div.post_img > video{
+    -ms-flex-negative:0;flex-shrink:0;width:100%;
+	border-top-left-radius:calc(.25rem - 1px);
+	border-top-right-radius:calc(.25rem - 1px);
+    border-top-right-radius:0; border-top-left-radius: 0;  
+ }
+ 
+.post_footer{
+    position: relative; margin-top: 1%;width: 100%; height: 35px; background-color:#202225;
+}
+.post_footer>div>button, .post_footer>div>button>a{
+    background-color: transparent; color: #606770; border:none; font-weight: bold; width: 100%; height: 25px; line-height: 25px; font-size: 13px;
+    cursor: pointer;  padding:5px 5px 5px 5px; text-decoration: none;
+    text-align: center; padding-left: .5rem;
+}
+ 
+.post_footer>div>button>img{
+    height: 25px; vertical-align: middle;
+}
+.post_footer>div>button>a>img{
+    height: 20px; vertical-align: middle;
+}
+.post_footer>div>button:hover{
+    color: #FFF;
+}
+.post_footer>div>button>span{
+    padding-left: .5rem;
+}
+
+.post_icon>.emo_ico{
+   float: left; color: #FFF; font-weight: 700; padding-left:.5rem;
+   background-color: transparent; height: 25px; line-height: 25px; 
+}
+ 
+.post_icon>.emo_ico>img{
+    height: 25px; vertical-align: middle;
+}
+ 
+.like_btn , .share_btn, .comments_btn{
+    width: 100%; 
+}
+.like_btn>button , .share_btn>button, .comments_btn>button{
+    text-align: center;
+}
+.like_btn:hover, .share_btn:hover,.comments_btn:hover{
+   transition: 300ms;  background-color: #202225; color: #FFF;
+}
+.like_btn{
+    position: relative;  
+}
+.like_btn>button>img{
+    height: 25px;
+}
+.like_btn::before {
+    content: "."; opacity: 0; display: block;width: 44px;height: 10px;position: absolute; top: -10px; left: 0;
+}
+  
+.like_btn .react_box{
+    position: absolute; width: 312px; height: 55px; background:#202225; border-radius: 28px; left:-25px; bottom:35px; display: none;
+}
+ 
+.like_btn:hover .react_box{
+    display: block;
+}
+.like_btn .react_icon{
+    width: 40px; height: 40px; display: inline-block; background: #2F3136; border-radius: 20px; margin:9px -1px 0 8px; text-align: center;
+    margin-left: 3%;
+}
+ 
+.like_btn .react_icon{
+    padding:3px 5px 3px 5px; position: relative;   border-radius: 20px; font-size: 11px; color: #ffffff; background-color:#2F3136;  cursor: pointer;
+}
+.react_box>:nth-child(1)
+{
+     background-image: url("../emoji/Like.png"); background-position: center; background-repeat: no-repeat; background-size: cover;
+
+}
+.react_box>:nth-child(2)
+{
+     background-image: url("../emoji/Funny.png"); background-position: center; background-repeat: no-repeat; background-size: cover;
+}
+.react_box>:nth-child(3)
+{
+     background-image: url("../emoji/Love.png"); background-position: center; background-repeat: no-repeat; background-size: cover;
+}
+.react_box>:nth-child(4)
+{
+     background-image: url("../emoji/Angry.png"); background-position: center; background-repeat: no-repeat; background-size: cover;
+}
+.like_btn .react_icon:hover{
+    transition: 500ms; transform: scale(1.1); transform-origin: bottom;
+}
+.like_btn .react_icon label {
+    padding: 3px 5px 3px 5px;position: relative; top: -24px; border-radius: 10px; font-size: 11px; color: #FFF; background: #333;
+}
+.react_icon>label{
+    visibility: hidden;
+}
+.react_icon:hover label{
+    visibility: visible;
+}
+.new_com{
+    width: 100%;  
+}
+.all_comments{
+    padding-bottom: 1rem;
+}
+.post_mini_comments{
+    width: 100%;
+}
+.comment_avatar>a{
+    text-decoration: none; 
+}
+.comment_avatar>a>img{
+    height: 25; border-radius: 50%; border:3px solid #FFF; vertical-align: middle;
+}
+.comment_avatar>:nth-child(2){
+    padding-left: .5rem; color: #4B4F56; cursor: pointer;
+}
+.comment_text{
+    padding-left: 3rem; margin-top: -4px; color: #FFF;   word-break: break-all;
+    position: relative;
+}
+.comment_text>:nth-child(1){
+    width: 76%;
+}
+.reply_btn{
+     width: 20px; height: 20px; background-image: url("../img/reply.png"); vertical-align: middle; margin-left: 1rem;
+}
+.comment_date{
+    position: absolute; right: 0;
+}
+
+.reply_form{
+    padding-top: 1rem; padding-left: 3rem; position: relative;  display: none;
+}
+ 
+#sendcom{
+    position: relative;
+}
+#sendcom>textarea{
+    display: block; width: 100%; height: 40px;   border:none; border-radius: 10px; resize: none; background-color: #2F3136;
+    padding-left: .5rem; padding-top: .4rem; color: #ffffff; overflow-y: hidden; outline: none;
+}
+ 
+.reply_form>textarea{
+     width: 100%; height: 30px;   border:none; border-radius: 10px; resize: none; background-color: #2F3136;
+    padding-left: .5rem; padding-top: .4rem; color: #ffffff; overflow-y: hidden; outline: none;  
+}
+#input_switch{
+   display: block;  cursor: pointer; position: absolute; right: .3rem; bottom: 0;  background-color: #2F3136;
+}
+#input_switch_detail{
+    display: block;    cursor: pointer; position: absolute; bottom: 5px; right: .3rem;   background-color: #2F3136;
+}
+#input_switch>button, #input_switch>span, #input_switch_detail>button, #input_switch_detail>span{
+   display: inline-block;  width: 32px;  background-color: #2F3136; cursor: pointer;
+}
+#input_switch>button>img, #input_switch>span>img, #input_switch_detail>button>img, #input_switch_detail>span>img{
+    height: 25px; float: right;
+}
+ 
+.reply{
+    padding-left: 2rem;
+}
+
+/*********************/
+/***** PROFILE *******/
+ .profile{
+    display: block;  width: 550px;  padding-left: 2.8rem; margin-top: 8%;
+  }
+  .profile_cover{
+      display: block; width: 100%; height: 150px; background:#393C43;
+        position: relative; border:1px solid gray;
+        background-size: cover; background-position: center; background-repeat: no-repeat;
+  }
+  .profile_data{
+      padding-top: 2rem; padding-left: 1rem;
+  }
+  .profile_avatar{
+    width: 70px;  height: 70px; border-radius: 50%; border:3px solid #ffffff;
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+  }
+  .profile_username{
+      margin-top: 8%; padding-left: .5rem;
+  }
+  .profile_username>a{
+    text-decoration: none; color: #ffffff; font-size: 19;
+    font-weight: bold; letter-spacing: 1;
+  }
+  .profile_option_box{
+    position: absolute; right:2rem; bottom: 2rem;
+  }
+  .profile_footer{
+       width: 100%; height: 38px; line-height: 38px; background: #202225;
+  }
+  .profile_footer>div{
+       width: 100%; text-align: center; color: #ffffff;  
+  }
+  .profile_footer>:nth-child(1){
+      border-right: 1px solid gray;
+  }
+  .profile_footer>:nth-child(3){
+    border-left: 1px solid gray;
+}
+.all_followers{
+  display: none; flex-wrap:wrap;  margin-top: 2%; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.41);
+}
+.followers{
+  width: 120px; height: 120px;  margin-left: 2%;  border-radius: 5px; cursor: pointer;
+  transition: 600ms; transform-origin: top;
+}
+.followers:hover{
+  transition: 600ms; transform-origin: bottom; transform: scale(1.10);
+}
+.fl-avatar{
+  width:75px; height: 75px; border-radius: 50%; border:3px solid #FFF;
+  margin: auto; margin-top: 4%;
+}
+.fl_user{
+  width: 100%; text-align: center; margin-top: 3%;
+}
+.fl_user>a{text-decoration: none;}
+.show_profile{
+  display:block; margin: auto; width: 80%; height: 25px; background: #4AB480; color: #FFF; border-radius: 5px; 
+  cursor: pointer; font-weight: bold;
+}
+ 
+
+.profile-posts{
+    padding-top: 1%;
+}
+.post-box{
+  width: 98%; height: 50px; line-height: 50px;  padding-left: .5rem; margin-top: .5rem;
+  background-color: #202225;
+}
+.post-box>img, .post-box>video{
+    width: 40px; height: 40px; vertical-align: middle;
+}
+.post-box>:nth-child(2){
+    color: #ffffff; padding-left: .5rem; font-size: 17px;
+    font-weight: bold; letter-spacing: 1px;
+}
+.post-box>:nth-child(3){
+    color: gray;  float: right; margin-right: 1%;
+}
+/*********************/
+/***** SETTINGS *******/
+.settings{
+  width: 100%; height: 400px; background: #202225; margin-top: 1%; display: none;
+} 
+.settings>.col1{
+  width: 90%; margin-left: 2%;
+}
+.settings_avatar{
+  width: 110px; padding-top: 1.4rem;
+}
+.settings_avatar_child{
+  height: 100px; width: 80px; background-color: red; background-blend-mode: multiply; position: relative; cursor: pointer;
+  transition: 400ms;
+}
+.settings_avatar_child>img{
+  width: 100%; height: 100%;
+}
+.settings_avatar_child:hover{
+  transition: 400ms; background-color: green;
+}
+.settings_avatar_child>span{
+  position: absolute; color: #FFF; left: 25%; top: 35%; font-weight: bold;
+}
+ 
+#changeavatar>input[type="file"]{
+  display: none;
+}
+#changeavatar>button{
+  display: block; width: 80px; height: 20px; border:none; background: #4AB480; color: #FFF;
+  font-weight: bold; margin-top: 1%;
+}
+.settings-userinfo{
+  padding-top: 1rem;
+}
+.settings-userinfo>span{
+  font-size: 19px; color: #FFF; padding-bottom: 1rem;
+}
+#changeuser{
+  width: 100%; padding-top: .6rem;
+}
+#changemail{
+  width: 100%;
+}
+.settings-userinfo>form>input{
+  width: 320px; height: 35px; border-radius: 3px;  background: #202225; color:#84888D; border:1px solid #84888D; outline: none;
+  padding-left: .3rem;
+}
+.settings-userinfo>form>button{
+  height: 35px; border-radius: 3px; color: #FFF; background: #4AB480; cursor: pointer; font-weight: bold;
+}
+.settings_security{
+  display:block; width: 50%; margin: auto;
+}
+.settings_security>span{
+  font-size: 18px; color: #FFF; text-align: center; padding-bottom: 1rem;
+}
+#changepwd{
+  width: 100%; margin: auto;
+}
+#changepwd>input{
+  width: 320px; height: 35px; border-radius: 3px;  background: #202225; color:#84888D; border:1px solid #84888D; outline: none;
+  padding-left: .3rem; margin-top: .5rem;
+}
+#changepwd>button{
+  display: block; width: 320px; height: 35px; border-radius: 3px; color: #FFF; background: #4AB480; cursor: pointer; font-weight: bold;
+  margin-top: .5rem;
+}
+
+/*********************/
+/***** NOTIFICATIONS *******/
+
+#notifications{
+    width: 300px; background-color: #060708; position: fixed;
+    top: 2.9rem; right: 22rem; padding:18px 8px 8px 8px; display: none; 
+}
+.notif_box{
+    width: 100%; height: 50px; margin-top: 2%; cursor: pointer;
+}
+.notif_box:hover{
+    transition: 200ms; background-color: #393C42;
+}
+.notif_img{
+    padding-left: .2rem; margin-top: 2%;
+}
+.notif_img>img{
+    height: 40px; width: 40px;
+}
+.notif_info>*{
+    display: block; width: 100%; padding-left: .5rem;
+}
+.notif_info>a{
+  text-decoration: none; font-weight: bold; color: #4AB480;
+}
+.notif_info>span>a{
+    text-decoration: none; color: #FFFFFFFF; font-weight: bold;
+}
+.notif_info>span{
+    color: #8E9297;
+}
+.notif_info>span>img{
+  height: 20px; width: 20px; vertical-align: middle;
+}
+#logoutbtn{
+    position: relative; width: 30px; height: 30px; border:none; background-color: transparent;
+    background-image: url("../img/logout.png"); background-size: cover; 
+    background-position: center; background-repeat: no-repeat;
+}
+
+/*********************/
+/***** UPLOAD MEME *******/
+#add_post_modal{
+  height: 280px; background: #202225; display: none;
+}
+.up_cover{
+  width: 100%; height: 150px;  position: relative; cursor: pointer;
+}
+.up_cover>img{
+  width: 100px; height: 100px;  transition: 400ms;
+}
+#removeimg{
+  width: 20px; height: 20px; background-image: url("../img/trash.png"); z-index: 9;
+  position: absolute; right: 10px; bottom: 5px; cursor: pointer; display: none;
+}
+.up_cover>img:hover{
+  transition: 400ms;  transform-origin: bottom; transform: scale(1.09); cursor: pointer; 
+  margin-top: 1rem;
+}
+#upf{
+  width: 100%; margin-top: 2%;
+}
+#upf>input[type="file"]{
+  display: none;
+}
+#upf>textarea{
+  display: block; width: 99%; height: 50px; resize: none; border:1px solid #8D8D8D; background: transparent; outline: none;
+  border-radius: 5px; padding-left: .5rem; padding-top: .5rem;
+}
+#upf>button{
+  display: block; width: 100%; height: 35px; border-radius: 5px; text-align: center; margin-top: 1%;
+  background-color: #4AB480; color: #FFFFFFFF; font-weight: bold;
+}
+ 
+ /*********************/
+/***** ONLINE FRIENDS*******/
+
+.online_friends{
+  margin-top: 10%; flex-wrap:wrap;
+}
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1481px)
+{
+
+    .post{
+        width: 590px;
+    }
+}

@@ -1,0 +1,119 @@
+body{
+    width: 100%; height: 100%; background-image: url("../img/backgorund.png"); background-position: center; background-size: cover;
+    background-position: center;   background-color: rgb(0,0,0);   background-color: rgba(0,0,0,0.4); 
+    background-blend-mode: multiply; overflow-x: hidden; overflow-y: hidden;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px grey;
+}
+::-webkit-scrollbar-thumb{
+    background: red;
+}
+.auth_page{
+    width: 50%; height: 50%;   position: absolute; left: 25%; top: 25%;  background-color: #36393F;
+    border-radius: 5px;  
+}
+#page_title{
+    text-align: center; color: #ffffff; font-weight: bold; position: relative; width: auto; height: 30px; margin-top: 2rem;
+    font-size: 19px;
+}
+ 
+ #loginform{
+     width: 90%; margin: auto; margin-top: 1rem;  
+ }
+.log_colm>*{
+    display: block;
+}
+.log_colm>span{
+    color: #202225; font-weight: bolder; font-size: 13px;
+}
+.log_colm>input{
+    width: 100%; height: 38px; background-color: #202225; border:none; border-radius: 3px; color: #ffffff; padding-left: .5rem; font-weight: bold;
+}
+.log_colm_forget{
+    margin-top: 1%;
+}
+.log_colm_subm{
+    margin-top: 3%;
+}
+.log_colm_subm>button{
+    width: 100%; height: 40px; border-radius: 5px; border:none; color: #ffffff; font-weight: bold;
+    background-color: #7489D9;
+}
+#forget{
+    text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #7489D9; margin-left: .3rem; 
+}
+.log_colm_need{
+    margin-top: 3%;
+}
+.log_colm_need, .log_colm_already{
+    color: #4A4D53;
+}
+.log_colm_need>span>a, .log_colm_already>span>a{
+    text-decoration: none; color: #7489D9; font-weight: bold; font-size: 18px;
+}
+
+.registpage{
+    width: 50%; height: 50%;   position: absolute; left: 25%; top: 25%;  background-color: #36393F;
+    border-radius: 5px; display: none;
+}
+#registform{
+    width: 90%; margin: auto; margin-top:1rem;  
+}
+.log_colm_already{
+    padding-top: .5rem;
+}
+
+/***********************************************/
+/************ MOBILE  414px************************/
+@media only screen and (max-width: 414px) and (orientation : portrait)
+{
+    body{
+        width: 100%; height: 100%; background-image: url("../img/backgorund.png"); background-position: center; background-size: cover;
+        background-position: center;   background-color: rgb(0,0,0);   background-color: rgba(0,0,0,0.4); 
+        background-blend-mode: multiply; overflow-x: hidden; overflow-y: hidden;
+    }
+
+    .auth_page{
+        width: 90%;  height: 300px;  position: absolute; left: 5%; top: 35%;  background-color: #36393F;
+        border-radius: 5px;  
+    }
+    .registpage{
+        width: 90%; height: 100%;    position: absolute; left: 7%; top: 30%;  background-color: #36393F;
+        border-radius: 5px;  
+    }
+}
+@media only screen and (max-width:840px) and (orientation : landscape)
+{
+    body{
+        overflow-y: scroll;  width: 100%; height: 100%; background-image: url("../img/backgorund.png"); background-position: center; background-size: cover;
+        background-position: center;   background-color: rgb(0,0,0);   background-color: rgba(0,0,0,0.4); 
+        background-blend-mode: multiply; overflow-x: hidden; overflow-y: hidden;
+    }
+     
+    .auth_page{
+        width: 400px; height:250px;   position: absolute; left: 20%; top: 25%;  background-color: #36393F;
+        border-radius: 5px;  
+    }
+    #loginform{
+        width: 90%; margin: auto; margin-top: -1rem;  
+    }
+    .log_colm>input{
+        width: 100%; height: 26px; background-color: #202225; border:none; border-radius: 3px;
+    }
+    .registpage{
+        width: 90%; height: 80%;    position: absolute; left: 7%; top: 23%;  background-color: #36393F;
+        border-radius: 5px;  
+    }
+    #registform
+    {
+        margin-top: -4%;
+    }
+    .log_colm>button{
+        margin-top: -2%;
+    }
+}

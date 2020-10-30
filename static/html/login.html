@@ -1,0 +1,74 @@
+ <!--
+   __       __  ________  __       __  ______  ________  __      __ 
+  |  \     /  \|        \|  \     /  \|      \|        \|  \    /  \
+  | $$\   /  $$| $$$$$$$$| $$\   /  $$ \$$$$$$ \$$$$$$$$ \$$\  /  $$
+  | $$$\ /  $$$| $$__    | $$$\ /  $$$  | $$     | $$     \$$\/  $$ 
+  | $$$$\  $$$$| $$  \   | $$$$\  $$$$  | $$     | $$      \$$  $$  
+  | $$\$$ $$ $$| $$$$$   | $$\$$ $$ $$  | $$     | $$       \$$$$   
+  | $$ \$$$| $$| $$_____ | $$ \$$$| $$ _| $$_    | $$       | $$    
+  | $$  \$ | $$| $$     \| $$  \$ | $$|   $$ \   | $$       | $$    
+   \$$      \$$ \$$$$$$$$ \$$      \$$ \$$$$$$    \$$        \$$-->
+   <html>
+    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link href="static/css/level0.css" rel="stylesheet">
+    </head>
+     <body>
+        <div class="auth_page">
+        <div class="login_page">
+            <div id="page_title">Welcome back! </div>
+            <form id="loginform">
+                <input type="hidden" name="signin">
+                <div class="log_colm">
+                    <span>Email</span>
+                    <input type="email" name="email" value="admin@admin.com">
+                </div>
+                <div class="log_colm">
+                    <span>Password</span>
+                    <input type="password" name="password" value="admin">
+                </div>
+                <div class="log_colm_forget">
+                    <a href="" id="forget">Forget your password?</a>
+                </div>
+                <div class="log_colm_subm">
+                    <button type="submit">Login</button>
+                </div>
+                <div class="log_colm_need">
+                    <span>Need an account? <A id="regist_switch">Register</A></span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="registpage">
+        <div id="page_title">Welcome back! </div>
+        <form id="registform">
+            <input type="hidden" name="signup">
+            <div class="log_colm">
+                <span>Username</span>
+                <input type="text" name="username" value="admin" autocomplete="off">
+            </div>
+            <div class="log_colm">
+                <span>Password</span>
+                <input type="password" name="password" value="admin" autocomplete="off">
+            </div>
+            <div class="log_colm">
+                <span>Confirm your password</span>
+                <input type="password" name="repeat" value="admin" autocomplete="off">
+            </div>
+            <div class="log_colm">
+                <span>Email</span>
+                <input type="email" name="email" value="admin@admin.com">
+            </div>
+            <div class="log_colm_subm">
+                <button type="submit">Login</button>
+            </div>
+            <div class="log_colm_already">
+                <span>Already registered? <A id="login_switch">Login</A></span>
+            </div>
+        </form>
+        </div>
+    </div>
+    <script  src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script  src="static/js/level0.js"></script>
+    </body>
+</html>
